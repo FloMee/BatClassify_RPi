@@ -40,20 +40,20 @@ Once analysis has finished, the 'Results.csv' file will be found in the output f
 -----------------------
 Precision-Recall metric to evaluate the quality of the output of the classifiers:
 
-| Species   | Precision | Recall |  N  |
-|:---------:|:---------:|:------:|:---:|
-| Bbar		| 0.9955    | 0.9095 | 243 |
-| Malc    	| 0.8300    | 0.8700 | 23  |
-| Mbec    	| 1.0000    | 0.6250 | 16  |
-| Mbra/Mmys | 0.8611    | 0.9511 | 244 |
-| Mdau     	| 0.9944    | 0.8786 | 210 |
-| Mnat     	| 0.9771    | 0.9624 | 133 |
-| NSL      	| 0.9974    | 0.9872 | 391 |
-| Paur     	| 0.9831    | 0.8788 | 198 |
-| Ppip     	| 0.9901    | 0.9804 | 510 |
-| Ppyg     	| 0.9644    | 0.9675 | 308 |
-| Rfer     	| 1.0000    | 1.0000 | 79  |
-| Rhip     	| 1.0000    | 1.0000 | 353 |
+| Species     | Precision | Recall |  N  |
+|:-----------:|:---------:|:------:|:---:|
+| _Bbar_	  | 0.9955    | 0.9095 | 243 |
+| _Malc_   	  | 0.8300    | 0.8700 | 23  |
+| _Mbec_   	  | 1.0000    | 0.6250 | 16  |
+| _Mbra/Mmys_ | 0.8611    | 0.9511 | 244 |
+| _Mdau_   	  | 0.9944    | 0.8786 | 210 |
+| _Mnat_   	  | 0.9771    | 0.9624 | 133 |
+| _NSL_    	  | 0.9974    | 0.9872 | 391 |
+| _Paur_   	  | 0.9831    | 0.8788 | 198 |
+| _Ppip_   	  | 0.9901    | 0.9804 | 510 |
+| _Ppyg_   	  | 0.9644    | 0.9675 | 308 |
+| _Rfer_   	  | 1.0000    | 1.0000 | 79  |
+| _Rhip_   	  | 1.0000    | 1.0000 | 353 |
 
 NSL group comprises _Nyctalus noctula_, _Nyctalus leisleri_ and _Eptesicus serotinus_.
 
