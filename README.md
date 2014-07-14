@@ -6,8 +6,7 @@ BatClassify automates the extraction and classification of echolocation calls (f
 ## Getting started (Windows)
 -----------------------
 ### Step 1. Download
-Find 'BatClassify_win32.zip' at https://bitbucket.org/chrisscott/batclassify/downloads 
-Right click and select 'Save link as...' to download the file. Unzip the file contents to a location of your choice.
+Find 'BatClassify_win32.zip' at https://bitbucket.org/chrisscott/batclassify/downloads and right click and select 'Save link as...' to download the file. Unzip the file contents to a location of your choice.
 
 ### Step 2. Run BatClassify
 The BatClassify.exe is found in the 'bin' folder inside the 'BatClassify' folder previously extracted. Double-click the .exe file to bring up the BatClassify user interface. 
