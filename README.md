@@ -3,7 +3,7 @@
 BatClassify automates the extraction and classification of echolocation calls (for a subset of UK bat species) from time-expansion and direct-sampling detector recordings.
 
 
-## Getting started (Windows)
+## Getting Started (Windows)
 -----------------------
 ### Step 1. Download
 Find 'BatClassify_win32.zip' at https://bitbucket.org/chrisscott/batclassify/downloads and right click and select 'Save link as...' to download the file. Unzip the file contents to a location of your choice.
