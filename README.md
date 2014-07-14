@@ -1,5 +1,5 @@
-# BatClassify
------------------------
+# __BatClassify__
+
 BatClassify automates the extraction and classification of echolocation calls (for a subset of UK bat species) from time-expansion and direct-sampling detector recordings.
 
 ## Getting started (Windows)
