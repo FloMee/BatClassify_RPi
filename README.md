@@ -2,6 +2,7 @@
 
 BatClassify automates the extraction and classification of echolocation calls (for a subset of UK bat species) from time-expansion and direct-sampling detector recordings.
 
+
 ## Getting started (Windows)
 -----------------------
 ### Step 1. Download
@@ -24,6 +25,7 @@ Select the Analyse tab of the user interface. Select the folder containing the r
 ### Step 5. View results
 Once analysis has finished, the 'Results.csv' file will be found in the output folder selected in step 4. CSV files can be viewed in a number of programs e.g. Microsoft Excel, OpenOffice and Google Docs. Analysis results are organised with a row for each recording, and a column for each species. Classifier output for each species or species group is a number between 0 and 1, and represents an estimate of presence within that recording. For example, a recording containing calls from a lesser horseshoe only should have values near 0 for all species except _Rhip_, where values closer to 1 indicate increasing confidence in presence. Note that multiple species may be present in a single recording, in which case more than one value in that row may be non-zero.
 
+
 ## Methods
 -----------------------
 * [libsndfile](http://www.mega-nerd.com/libsndfile/) is used to read audio files
@@ -33,6 +35,7 @@ Once analysis has finished, the 'Results.csv' file will be found in the output f
 * Blob detection via [connected component labelling](http://www.iis.sinica.edu.tw/papers/fchang/1362-F.pdf)
 * Feature extraction - spectral and temporal moments, gradient histogram
 * Classification using a [tree-based ensemble](http://orbi.ulg.ac.be/bitstream/2268/9357/1/geurts-mlj-advance.pdf)
+
 
 ## Evaluation
 -----------------------
@@ -59,6 +62,7 @@ Notice not all UK species are covered yet, and sample sizes for _Myotis alcathoe
 
 Pettersson D240X and D500X recordings were used to train/test models.
 
+
 ## Credits
 -----------------------
 * BCT
@@ -66,10 +70,13 @@ Pettersson D240X and D500X recordings were used to train/test models.
 * PTES (http://www.ptes.org/)
 * University of Leeds
 
+
 ## Contact
 -----------------------
 Maintainer: Chris Scott (fbscds@gmail.com).
 
+
 ## License
 -----------------------
 Licensed under the [GPL, Version 3](http://www.gnu.org/copyleft/gpl.html)
+
