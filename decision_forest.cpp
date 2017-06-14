@@ -23,9 +23,10 @@
 
 void DecisionForest::Read(std::string filename) {
     std::ifstream ifs(filename.c_str());
-	if (!ifs.is_open()) {
-	    std::cerr << "failed to open " << filename << '\n';
-	}
+    if (!ifs.is_open()) {
+        std::cerr << "failed to open " << filename << '\n';
+        return;
+    }
 	std::size_t forest_size;
 	ifs >> forest_size;
 	forest_.clear();
