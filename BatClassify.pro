@@ -24,7 +24,8 @@ SOURCES += main.cpp\
     image.cpp \
     running_stat.cpp \
     STFT.cpp \
-    utilities.cpp
+    utilities.cpp \
+    classifieruk.cpp
 
 HEADERS  += mainwindow.h \
     audiodecoder.h \
@@ -37,7 +38,8 @@ HEADERS  += mainwindow.h \
     image.h \
     running_stat.h \
     STFT.h \
-    utilities.h
+    utilities.h \
+    classifieruk.h
 
 FORMS    += mainwindow.ui
 
