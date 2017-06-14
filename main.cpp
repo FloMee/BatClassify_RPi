@@ -18,9 +18,28 @@
 *************************************************************************/
 
 #include "mainwindow.h"
+#include "classifieruk.h"
 #include <QApplication>
+#include <QString>
+#include <QJsonDocument>
+#include <QJsonObject>
 
 int main(int argc, char *argv[]) {
+
+    if(argc > 1) {
+        QString filename(argv[1]);
+        ClassifierUK classifier;
+        RecordingResults result = classifier.AutoIdFile(filename, false);
+        QJsonObject results;
+
+        for (auto i = result.results.begin(); i != result.results.end(); ++i) {
+            results.insert(QString::fromStdString(i->first), QJsonValue(i->second));
+        }
+
+        std::cout << QJsonDocument(results).toJson(QJsonDocument::Compact).toStdString();
+        return 0;
+    }
+
     QApplication a(argc, argv);
     QCoreApplication::setApplicationName("BatClassify");
 
