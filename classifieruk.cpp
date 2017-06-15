@@ -25,12 +25,12 @@
 
 ClassifierUK::ClassifierUK()
 {
-    Bbar.Read("../models/Bbar.forest");
-    Myotis.Read("../models/Myotis.forest");
-    NSL.Read("../models/NSL.forest");
-    Pipistrellus.Read("../models/Pipistrellus.forest");
-    Paur.Read("../models/Paur.forest");
-    Rhinolophus.Read("../models/Rhinolophus.forest");
+    Bbar.Read("models/Bbar.forest");
+    Myotis.Read("models/Myotis.forest");
+    NSL.Read("models/NSL.forest");
+    Pipistrellus.Read("models/Pipistrellus.forest");
+    Paur.Read("models/Paur.forest");
+    Rhinolophus.Read("models/Rhinolophus.forest");
 }
 
 RecordingResults ClassifierUK::AutoIdFile(QString file, bool spectrograms)
