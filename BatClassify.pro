@@ -24,7 +24,8 @@ SOURCES += main.cpp\
     image.cpp \
     running_stat.cpp \
     STFT.cpp \
-    utilities.cpp
+    utilities.cpp \
+    classifieruk.cpp
 
 HEADERS  += mainwindow.h \
     audiodecoder.h \
@@ -37,27 +38,42 @@ HEADERS  += mainwindow.h \
     image.h \
     running_stat.h \
     STFT.h \
-    utilities.h
+    utilities.h \
+    classifieruk.h
 
 FORMS    += mainwindow.ui
 
+##########################   libsndfile
 win32:CONFIG(release, debug|release): LIBS += -L$$PWD/libs/libsndfile/ -llibsndfile-1
 else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/libs/libsndfile/ -llibsndfile-1
 else:unix: LIBS += -L$$PWD/libs/libsndfile/ -llibsndfile-1
+else:macx: LIBS += -L/usr/local/Cellar/libsndfile/1.0.26/lib/ -lsndfile.1
 
-INCLUDEPATH += $$PWD/libs/libsndfile
-DEPENDPATH += $$PWD/libs/libsndfile
+win32:INCLUDEPATH += $$PWD/libs/libsndfile
+macx:INCLUDEPATH += /usr/local/Cellar/libsndfile/1.0.26/include
 
+win32:DEPENDPATH += $$PWD/libs/libsndfile
+macx:DEPENDPATH += /usr/local/Cellar/libsndfile/1.0.26/include
+
+##########################   libsamplerate
 win32:CONFIG(release, debug|release): LIBS += -L$$PWD/libs/libsamplerate/ -llibsamplerate
 else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/libs/libsamplerate/ -llibsamplerate
 else:unix: LIBS += -L$$PWD/libs/libsamplerate/ -llibsamplerate
+else:macx: LIBS += -L/usr/local/Cellar/libsamplerate/0.1.8/lib/ -lsamplerate
 
-INCLUDEPATH += $$PWD/libs/libsamplerate
-DEPENDPATH += $$PWD/libs/libsamplerate
+win32:INCLUDEPATH += $$PWD/libs/libsamplerate
+macx:INCLUDEPATH += /usr/local/Cellar/libsamplerate/0.1.8/include
 
+win32:DEPENDPATH += $$PWD/libs/libsamplerate
+macx:DEPENDPATH += /usr/local/Cellar/libsamplerate/0.1.8/include
+
+##########################   FFTW
 win32:CONFIG(release, debug|release): LIBS += -L$$PWD/libs/fftw/ -llibfftw3f-3
 else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/libs/fftw/ -llibfftw3f-3
 else:unix: LIBS += -L$$PWD/libs/fftw/ -llibfftw3f-3
+else:mac: LIBS += -L/usr/local/Cellar/fftw/3.3.4_1/lib -lfftw3f.3
 
-INCLUDEPATH += $$PWD/libs/fftw
-DEPENDPATH += $$PWD/libs/fftw
+win32:INCLUDEPATH += $$PWD/libs/fftw
+macx:INCLUDEPATH += /usr/local/Cellar/fftw/3.3.4_1/include
+win32:DEPENDPATH += $$PWD/libs/fftw
+macx:DEPENDPATH += /usr/local/Cellar/fftw/3.3.4_1/include

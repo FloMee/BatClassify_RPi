@@ -24,12 +24,8 @@
 #include <vector>
 #include <unordered_map>
 #include <fstream>
-#include "blob.h"
-#include "decision_forest.h"
-#include "audiodecoder.h"
-#include "STFT.h"
-#include "blob-finder.h"
 #include <QMainWindow>
+#include "classifieruk.h"
 
 struct Audio {
     std::vector<float> samples;
@@ -37,17 +33,7 @@ struct Audio {
     Audio() : format(0), channels(1), samplerate(0) {}
 };
 
-struct DateTime {
-    std::string date;
-    std::string time;
-    DateTime() : date("NA"), time("NA") {}
-};
 
-struct RecordingResults {
-    std::string filepath, filename, date, time;
-    std::unordered_map<std::string, float> results;
-    RecordingResults() : filepath("NA"), filename("NA"), date("NA"), time("NA") {}
-};
 
 namespace Ui {
 class MainWindow;
@@ -77,15 +63,10 @@ private:
     void WriteAudio(Audio audio, std::string file, std::string timestamp);
     void AppendResults(RecordingResults& recording, std::fstream& ofs);
     void WriteErrors(const std::vector<std::string>& error_log, std::string outfile);
-    DateTime ReadTime(std::string filename);
     std::string Timestamp(float seconds);
-    std::unordered_map<int, Blob> PriorityBlobs(std::unordered_map<int, Blob>& blobs, std::size_t n = 4);
 
     Ui::MainWindow *ui;
-    DecisionForest Bbar, Myotis, NSL, Pipistrellus, Paur, Rhinolophus;
-    AudioDecoder audio;
-    BlobFinder blobfinder;
-    STFT stft;
+    ClassifierUK classifier;
 };
 
 #endif // MAINWINDOW_H
