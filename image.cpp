@@ -168,7 +168,7 @@ void mImage::LogCompress(float compression) {
 }
 
 void mImage::BackgroundSubtract() {
-    RunningStat stats[height];
+    std::vector<RunningStat> stats(height);
     float C = 1.5;
     for (size_t x=0; x<width; ++x) {
         std::size_t offset = x*height;
