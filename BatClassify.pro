@@ -46,7 +46,13 @@ FORMS    += mainwindow.ui
 ##########################   libsndfile
 win32:CONFIG(release, debug|release): LIBS += -L$$PWD/libs/libsndfile/ -llibsndfile-1
 else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/libs/libsndfile/ -llibsndfile-1
-else:unix: LIBS += -L$$PWD/libs/libsndfile/ -llibsndfile-1
+else:unix: {
+    contains(QMAKE_HOST.arch, arm.*):{
+        LIBS += /usr/lib/arm-linux-gnueabihf/libsndfile.so
+    }else{
+        LIBS += /usr/lib/libsndfile.so
+    }
+} 
 else:macx: LIBS += -L/usr/local/Cellar/libsndfile/1.0.26/lib/ -lsndfile.1
 
 win32:INCLUDEPATH += $$PWD/libs/libsndfile
@@ -58,7 +64,13 @@ macx:DEPENDPATH += /usr/local/Cellar/libsndfile/1.0.26/include
 ##########################   libsamplerate
 win32:CONFIG(release, debug|release): LIBS += -L$$PWD/libs/libsamplerate/ -llibsamplerate
 else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/libs/libsamplerate/ -llibsamplerate
-else:unix: LIBS += -L$$PWD/libs/libsamplerate/ -llibsamplerate
+else:unix: {
+    contains(QMAKE_HOST.arch, arm.*):{
+        LIBS += /usr/lib/arm-linux-gnueabihf/libsamplerate.so
+    }else{
+        LIBS += /usr/lib/libsamplerate.so
+    }
+}
 else:macx: LIBS += -L/usr/local/Cellar/libsamplerate/0.1.8/lib/ -lsamplerate
 
 win32:INCLUDEPATH += $$PWD/libs/libsamplerate
@@ -70,7 +82,13 @@ macx:DEPENDPATH += /usr/local/Cellar/libsamplerate/0.1.8/include
 ##########################   FFTW
 win32:CONFIG(release, debug|release): LIBS += -L$$PWD/libs/fftw/ -llibfftw3f-3
 else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/libs/fftw/ -llibfftw3f-3
-else:unix: LIBS += -L$$PWD/libs/fftw/ -llibfftw3f-3
+else:unix: {
+    contains(QMAKE_HOST.arch, arm.*):{
+        LIBS += /usr/lib/arm-linux-gnueabihf/libfftw3f.so
+    }else{
+        LIBS += /usr/lib/libfftw3f.so
+    }
+}
 else:mac: LIBS += -L/usr/local/Cellar/fftw/3.3.4_1/lib -lfftw3f.3
 
 win32:INCLUDEPATH += $$PWD/libs/fftw
