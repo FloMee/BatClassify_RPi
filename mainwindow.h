@@ -25,6 +25,7 @@
 #include <unordered_map>
 #include <fstream>
 #include <QMainWindow>
+#include <sndfile.hh>
 #include "classifieruk.h"
 
 struct Audio {

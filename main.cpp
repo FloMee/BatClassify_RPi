@@ -25,27 +25,35 @@
 #include <QJsonObject>
 
 int main(int argc, char *argv[]) {
+    
+    if(argc > 1){
+        QApplication a(argc, argv);
+        QCoreApplication::setApplicationName("BatClassify");
 
-    if(argc > 1) {
-        QString filename(argv[1]);
-        ClassifierUK classifier;
-        RecordingResults result = classifier.AutoIdFile(filename, false);
-        QJsonObject results;
+        MainWindow w;
+        w.setWindowTitle("BatClassify");
+        w.show();
 
-        for (auto i = result.results.begin(); i != result.results.end(); ++i) {
-            results.insert(QString::fromStdString(i->first), QJsonValue(i->second));
-        }
-
-        std::cout << QJsonDocument(results).toJson(QJsonDocument::Compact).toStdString();
-        return 0;
+        return a.exec();
     }
+    
+    
+    ClassifierUK classifier;
+    std::string input;
+    do {
+	std::cout << "file";
+        std::cin >> input;
+        if(input != "quit") {
+            QString filename = QString::fromStdString(input);
+            RecordingResults result = classifier.AutoIdFile(filename, false);
+            QJsonObject results;
+            for (auto i = result.results.begin(); i != result.results.end(); ++i) {
+                    results.insert(QString::fromStdString(i->first), QJsonValue(i->second));
+            }
 
-    QApplication a(argc, argv);
-    QCoreApplication::setApplicationName("BatClassify");
-
-    MainWindow w;
-    w.setWindowTitle("BatClassify");
-    w.show();
-
-    return a.exec();
+            std::cout << QJsonDocument(results).toJson(QJsonDocument::Compact).toStdString() << "done";
+        }
+    } while(input != "quit");
+    
+    return 0;
 }
