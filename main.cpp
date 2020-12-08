@@ -41,7 +41,7 @@ int main(int argc, char *argv[]) {
     ClassifierUK classifier;
     std::string input;
     do {
-	std::cout << "file";
+	std::cout << "inputfile:";
         std::cin >> input;
         if(input != "quit") {
             QString filename = QString::fromStdString(input);
@@ -51,7 +51,7 @@ int main(int argc, char *argv[]) {
                     results.insert(QString::fromStdString(i->first), QJsonValue(i->second));
             }
 
-            std::cout << QJsonDocument(results).toJson(QJsonDocument::Compact).toStdString() << "done";
+            std::cout << QJsonDocument(results).toJson(QJsonDocument::Compact).toStdString() << "\n";
         }
     } while(input != "quit");
     

@@ -1,4 +1,14 @@
-# __BatClassify__
+
+This is an adjusted version of Batclassify by Chris Scott to use it with the RaspberryPi
+With no command line options this version will go into a simple interactiv mode where you can enter audiofilepaths. With any command line options the gui will start.
+
+## Compiling
+
+cd /path/to/batclassify
+qmake BatClassify.pro
+make
+
+# __BatClassify__ original description
 
 BatClassify automates the extraction and classification of echolocation calls (for a subset of UK bat species) from time-expansion and direct-sampling detector recordings.
 
