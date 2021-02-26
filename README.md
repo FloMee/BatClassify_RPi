@@ -2,11 +2,26 @@
 This is an adjusted version of Batclassify by Chris Scott to use it with the RaspberryPi
 With no command line options this version will go into a simple interactiv mode where you can enter audiofilepaths. With any command line options the gui will start.
 
+## Requirements
+First you have to install the following packages to compile BatClassify. 
+
+    sudo apt install qt5-default qt5-qmake libsndfile1-dev libsamplerate0-dev libfftw3-dev
+
 ## Compiling
 
-cd /path/to/batclassify
-qmake BatClassify.pro
-make
+    git clone https://github.com/FloMee/BatClassify_RPi.git
+    cd BatClassify_RPi
+    qmake BatClassify.pro
+    make
+
+After that you have to make sure that BatClassify is executable from within the command line. Therefore you have to add the following lines to your .profile file in your home directory.
+
+    export PATH=$PATH:/home/pi/BatClassify_RPi/
+
+Finally move the models folder in your BatClassify directory to the home directory and reboot.
+
+    mv BatClassify_RPi/models/ /home/pi/
+    sudo reboot
 
 # __BatClassify__ original description
 
