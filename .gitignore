@@ -2,7 +2,6 @@
 /*.user.*
 .qmake.stash
 audiodecoder.o
-BatClassify
 blob-finder.o
 blob.o
 classifieruk.o
