@@ -1,6 +1,17 @@
 
-This is an adjusted version of Batclassify by Chris Scott to use it with the RaspberryPi
+This is an adjusted version of Batclassify by Chris Scott to use it with the RaspberryPi.
 With no command line options this version will go into a simple interactiv mode where you can enter audiofilepaths. With any command line options the gui will start.
+
+## Precompiled Version 
+
+This is the simplest solution to use BatClassify on your RaspberryPi. Otherwise you have to compile your own Version by following the instruction beginning with the requirements section.
+To use the precompiled Version you just have to download the **BatClassify** file and move it to `/bin/`. Moreover you have to install the following packages: 
+
+    sudo apt install qt5-default libsndfile1 libsamplerate0 libfftw3-3
+   
+After this you should be able to start BatClassify by simly typing `BatClassify` into the command line. To get the GUI running you can add any command line option.  `BatClassify -a` for example should work. To exit the terminal Version type `quit` after "inputfile:".
+
+The precompiled version is tested with Raspbian Buster. 
 
 ## Requirements
 First you have to install the following packages to compile BatClassify. 
@@ -23,6 +34,7 @@ Finally move the models folder in your BatClassify directory to the home directo
     mv BatClassify_RPi/models/ /home/pi/
     sudo reboot
 
+-------------------------
 # __BatClassify__ original description
 
 BatClassify automates the extraction and classification of echolocation calls (for a subset of UK bat species) from time-expansion and direct-sampling detector recordings.
