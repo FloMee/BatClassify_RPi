@@ -2,21 +2,25 @@
 This is an adjusted version of Batclassify by Chris Scott to use it with the RaspberryPi.
 With no command line options this version will go into a simple interactiv mode where you can enter audiofilepaths. With any command line options the gui will start.
 
+**Note: This version currently only works if the username is "pi". If you plan on using a different username on your RaspberryPi you have to adjust the filepaths for the models in the file classifieruk.cpp and recompile as described below**
+
 ## Precompiled Version 
 
 This is the simplest solution to use BatClassify on your RaspberryPi. Otherwise you have to compile your own Version by following the instruction beginning with the requirements section.
 To use the precompiled Version you just have to download the **BatClassify** file and move it to `/bin/`. Moreover you have to install the following packages: 
 
-    sudo apt install qt5-default libsndfile1 libsamplerate0 libfftw3-3
-   
+    sudo apt install qtbase5-dev libsndfile1 libsamplerate0 libfftw3-bin
+
+Additionally you have to copy the models folder to your home directory.
+
 After this you should be able to start BatClassify by simly typing `BatClassify` into the command line. To get the GUI running you can add any command line option.  `BatClassify -a` for example should work. To exit the terminal Version type `quit` after "inputfile:".
 
-The precompiled version is tested with Raspbian Buster. 
+The precompiled version is tested with Raspbian Bookworm. 
 
 ## Requirements
 First you have to install the following packages to compile BatClassify. 
 
-    sudo apt install qt5-default qt5-qmake libsndfile1-dev libsamplerate0-dev libfftw3-dev
+    sudo apt insta qtbase5-dev qt5-qmake libsndfile1-dev libsamplerate0-dev libfftw3-dev
 
 ## Compiling
 
