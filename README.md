@@ -33,6 +33,10 @@ After that you have to make sure that BatClassify is executable from within the 
 
     export PATH=$PATH:/home/pi/BatClassify_RPi/
 
+Alternatively you can simply move the file BatClassify to the '/bin/' folder.
+
+    sudo mv BatClassify_RPi/BatClassify /bin/
+
 Finally move the models folder in your BatClassify directory to the home directory and reboot.
 
     mv BatClassify_RPi/models/ /home/pi/
